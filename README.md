@@ -2,12 +2,12 @@
 
 This repository is the official implementation of **MotionEditor: Editing Video Motion via Content-Aware Diffusion**.
 
-**[MotionEditor: Editing Video Motion via Content-Aware Diffusion](https://arxiv.org/abs/)**
+**[MotionEditor: Editing Video Motion via Content-Aware Diffusion](https://arxiv.org/abs/2311.18830)**
 <br/>
 Shuyuan Tu, [Qi Dai](https://scholar.google.com/citations?user=NSJY12IAAAAJ), [Zhi-Qi Cheng](https://scholar.google.com/citations?user=uB2He2UAAAAJ), [Han Hu](https://ancientmooner.github.io/), [Xintong Han](https://xthan.github.io/), [Zuxuan Wu](https://zxwu.azurewebsites.net/), [Yu-Gang Jiang](https://scholar.google.com/citations?user=f3_FP8AAAAAJ&hl=zh-CN)
 <br/>
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Project Website](https://img.shields.io/badge/Project-Website-orange)](https://francis-rings.github.io/MotionEditor/) [![arXiv](https://img.shields.io/badge/arXiv-2305.08850-b31b1b.svg)](https://arxiv.org/abs/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Project Website](https://img.shields.io/badge/Project-Website-orange)](https://francis-rings.github.io/MotionEditor/) [![arXiv](https://img.shields.io/badge/arXiv-2311.18830-b31b1b.svg)](https://arxiv.org/abs/2311.18830)
 
 <p align="center">
 <img src="./assets/figures/overview.png" width="1080px"/>  
