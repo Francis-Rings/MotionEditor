@@ -10,7 +10,7 @@ Shuyuan Tu, [Qi Dai](https://scholar.google.com/citations?user=NSJY12IAAAAJ), [Z
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Project Website](https://img.shields.io/badge/Project-Website-orange)](https://francis-rings.github.io/MotionEditor/) [![arXiv](https://img.shields.io/badge/arXiv-2311.18830-b31b1b.svg)](https://arxiv.org/abs/2311.18830)
 
 <p align="center">
-<img src="./assets/figures/overview.png" width="1080px"/>  
+<img src="./assets/figures/overview.jpg" width="1080px"/>  
 <br>
 <em>MotionEditor: A diffusion-based video editing method aimed at transferring motion from a reference to a source.</em>
 </p>
