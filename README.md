@@ -1,4 +1,4 @@
-# MotionEditor
+# MotionEditor [CVPR2024]
 
 This repository is the official implementation of **MotionEditor: Editing Video Motion via Content-Aware Diffusion**.
 
@@ -15,6 +15,8 @@ Shuyuan Tu, [Qi Dai](https://scholar.google.com/citations?user=NSJY12IAAAAJ), [Z
 <em>MotionEditor: A diffusion-based video editing method aimed at transferring motion from a reference to a source.</em>
 </p>
 
+# News
+- :star2: **[February, 2024]** MotionEditor has been accepted by CVPR2024.
 
 ## Abstract
 > Existing diffusion-based video editing models have made gorgeous advances for editing attributes of a source video over time but struggle to manipulate the motion information while preserving the original protagonist's appearance and background. To address this, we propose MotionEditor, a diffusion model for video motion editing. MotionEditor incorporates a novel content-aware motion adapter into ControlNet to capture temporal motion correspondence. While ControlNet enables direct generation based on skeleton poses, it encounters challenges when modifying the source motion in the inverted noise due to contradictory signals between the noise (source) and the condition (reference). Our adapter complements ControlNet by involving source content to transfer adapted control signals seamlessly. Further, we build up a two-branch architecture (a reconstruction branch and an editing branch) with a high-fidelity attention injection mechanism facilitating branch interaction. This mechanism enables the editing branch to query the key and value from the reconstruction branch in a decoupled manner, making the editing branch retain the original background and protagonist appearance. We also propose a skeleton alignment algorithm to address the discrepancies in pose size and position. Experiments demonstrate the promising motion editing ability of MotionEditor, both qualitatively and quantitatively.
