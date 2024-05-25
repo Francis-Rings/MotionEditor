@@ -22,6 +22,45 @@ Shuyuan Tu, [Qi Dai](https://scholar.google.com/citations?user=NSJY12IAAAAJ), [Z
 > Existing diffusion-based video editing models have made gorgeous advances for editing attributes of a source video over time but struggle to manipulate the motion information while preserving the original protagonist's appearance and background. To address this, we propose MotionEditor, the first diffusion model for video motion editing. MotionEditor incorporates a novel content-aware motion adapter into ControlNet to capture temporal motion correspondence.
 While ControlNet enables direct generation based on skeleton poses, it encounters challenges when modifying the source motion in the inverted noise due to contradictory signals between the noise (source) and the condition (reference). Our adapter complements ControlNet by involving source content to transfer adapted control signals seamlessly. Further, we build up a two-branch architecture (a reconstruction branch and an editing branch) with a high-fidelity attention injection mechanism facilitating branch interaction. This mechanism enables the editing branch to query the key and value from the reconstruction branch in a decoupled manner, making the editing branch retain the original background and protagonist appearance. We also propose a skeleton alignment algorithm to address the discrepancies in pose size and position. Experiments demonstrate the promising motion editing ability of MotionEditor, both qualitatively and quantitatively. To the best of our knowledge, MotionEditor is the first diffusion-based model capable of video motion editing.
 
+## Setup
+
+### Requirements
+
+```shell
+pip install -r requirements.txt
+```
+
+Installing [xformers](https://github.com/facebookresearch/xformers) is highly recommended for more efficiency and speed on GPUs. 
+To enable xformers, set `enable_xformers_memory_efficient_attention=True` (default).
+
+### Weights
+
+**[Stable Diffusion]** [Stable Diffusion](https://arxiv.org/abs/2112.10752) is a latent text-to-image diffusion model capable of generating photo-realistic images given any text input. The pre-trained Stable Diffusion models can be downloaded from Hugging Face (e.g., [Stable Diffusion v1-5](https://huggingface.co/runwayml/stable-diffusion-v1-5)).
+
+**[ControlNet]** [ControlNet](https://arxiv.org/abs/2302.05543) is a conditioned text-to-image diffusion model capable of generating conditioned contents. The pre-trained ControlNet models can be downloaded from Hugging Face (e.g., [sd-controlnet-openpose](https://huggingface.co/lllyasviel/sd-controlnet-openpose)). 
+
+## Usage
+
+### Training
+
+To fine-tune the text-to-image diffusion models for background reconstruction and fine-tune the motion adaptor for motion controlling, run this command:
+
+```bash
+python train_bg.py --config="configs/case-1/train-bg.yaml"
+python train_adaptor.py --config="configs/case-1/train-motion.yaml"
+```
+Note: The number of training steps is depend on the particular case.
+
+### Inference
+
+Once the training is done, run inference:
+
+```bash
+accelerate launch inference.py --config configs/case-1/eval-motion.yaml
+```
+Note: The null-text optimization is optional as it may increase the inference latency and computational cost. The target skeleton should be explicitly aligned with the source protagonist.
+The triggering step of attention injection mechanism can be modified for editing the motions of the particular case.
+
 ## Contact
 If you have any suggestions or find our work helpful, feel free to contact us
 
