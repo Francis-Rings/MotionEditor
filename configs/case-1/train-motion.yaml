@@ -1,0 +1,55 @@
+pretrained_model_path: checkpoints/stable-diffusion-v1-5
+output_dir: "outputs/train-case-1-motion"
+one_stage_checkpoint: "outputs/train-case-1-motion/checkpoint-300"
+
+input_data:
+  video_dir: "data/youtube-10"
+  prompt: "a girl is dancing"
+  n_sample_frames: 8
+  width: 512
+  height: 512
+  sample_start_idx: 0
+  sample_frame_rate: 1
+  condition: [openposefull]
+  video_suffix: .png
+  condition_suffix: .png
+  noise_level: 10000
+  image_embed_drop: 0.1
+  source_mask_dir: man.mask
+
+validation_data:
+  prompts:
+    - "a girl is dancing"
+
+  video_length: 8
+  width: 512
+  height: 512
+  num_inference_steps: 50
+  guidance_scale: 7.5
+  num_inv_steps: 50
+  # args for null-text inv
+  use_null_inv: True
+  null_inner_steps: 1
+  null_base_lr: 1e-2
+  null_uncond_ratio: -0.5
+  null_normal_infer: True
+  controlnet_conditioning_scale: 1.0
+
+input_batch_size: 1
+seed: 33
+gradient_checkpointing: True
+enable_xformers_memory_efficient_attention: True
+use_sc_attn: True
+use_st_attn: False
+st_attn_idx: 0
+
+max_train_steps: 300
+checkpointing_steps: 300
+validation_steps: 300
+learning_rate: 3e-5
+use_8bit_adam: False
+mixed_precision: "fp16"
+trainable_modules:
+  - "attn1.to_q"
+  - "attn2.to_q"
+  - "attn_temp"
