@@ -69,10 +69,10 @@ Email: francisshuyuan@gmail.com
 If you find our work useful, please consider citing it:
 
 ```
-@article{motioneditor,
+@inproceedings{tu2024motioneditor,
   title={MotionEditor: Editing Video Motion via Content-Aware Diffusion},
   author={Shuyuan Tu and Qi Dai and Zhi-Qi Cheng and Han Hu and Xintong Han and Zuxuan Wu and Yu-Gang Jiang}, 
-  journal={arXiv preprint arXiv:2311.18830},
-  year={2023}
+  booktitle={CVPR},
+  year={2024}
 }
 ```
