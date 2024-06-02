@@ -3,7 +3,7 @@ output_dir: "outputs/train-case-1-motion"
 one_stage_checkpoint: "outputs/train-case-1-motion/checkpoint-300"
 
 input_data:
-  video_dir: "data/youtube-10"
+  video_dir: "data/case-1"
   prompt: "a girl is dancing"
   n_sample_frames: 8
   width: 512
