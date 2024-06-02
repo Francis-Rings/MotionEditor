@@ -4,7 +4,7 @@ resume_from_checkpoint: "outputs/train-case-1-motion/checkpoint-300"
 adapter_weight_path: "outputs/train-case-1-motion/controlnet_adapter_checkpoint-300.pth"
 
 input_data:
-  video_dir: "data/youtube-10"
+  video_dir: "data/case-1"
   prompt: "a girl is dancing"
   n_sample_frames: 8
   width: 512
