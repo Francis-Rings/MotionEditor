@@ -16,6 +16,7 @@ Shuyuan Tu, [Qi Dai](https://scholar.google.com/citations?user=NSJY12IAAAAJ), [Z
 </p>
 
 # News
+- :star2: **[July, 2024]** The codes of the data preparation are available to the public.
 - :star2: **[February, 2024]** MotionEditor has been accepted by CVPR2024.
 
 ## Abstract
@@ -39,7 +40,41 @@ To enable xformers, set `enable_xformers_memory_efficient_attention=True` (defau
 
 **[ControlNet]** [ControlNet](https://arxiv.org/abs/2302.05543) is a conditioned text-to-image diffusion model capable of generating conditioned contents. The pre-trained ControlNet models can be downloaded from Hugging Face (e.g., [sd-controlnet-openpose](https://huggingface.co/lllyasviel/sd-controlnet-openpose)). 
 
+**[GroundingDINO]** [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO): wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha2/groundingdino_swinb_cogcoor.pth
+
+**[Segment Anything]** [Segment Anything](https://github.com/facebookresearch/segment-anything): wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+
+
 ## Usage
+
+### Data Preparation
+We firstly have to build the GroundedSAM environment.
+```bash
+cd data_preparation/GroundedSAM
+pip install -e GroundingDINO
+pip install -e segment_anything
+```
+For extracting the skeletons of the given frames:
+```bash
+cd data_preparation
+python video_skeletons.py --which_cond openposefull --data /path/frames
+```
+It is worth noting that the structure of the given data file should be the same as the structure of data/case-1 in the github.
+
+For extracting the masks of the given frames:
+```bash
+cd data_preparation
+python video_masks.py --text_prompt human --data /path/frames
+```
+--text_prompt indicates the prompt description of the target protagonist, such as boy, girl, and human.
+
+For aligning the source frames with target frames:
+```bash
+cd data_preparation
+python alignment.py --text_prompt human --source_mask_path /path/frames --target_mask_path /path/frames --source_pose_path /path/frames --target_pose_path /path/frames --save_path /path/frames
+```
+--source_mask_path, --target_mask_path, --source_pose_path, --target_pose_path refer to the source mask file directory, target mask file directory, source pose file directory, target pose file directory, respectively.
+--save_path indicates the saved file path of aligned frames.
 
 ### Training
 
