@@ -105,9 +105,10 @@ If you find our work useful, please consider citing it:
 
 ```
 @inproceedings{tu2024motioneditor,
-  title={MotionEditor: Editing Video Motion via Content-Aware Diffusion},
-  author={Shuyuan Tu and Qi Dai and Zhi-Qi Cheng and Han Hu and Xintong Han and Zuxuan Wu and Yu-Gang Jiang}, 
-  booktitle={CVPR},
+  title={Motioneditor: Editing video motion via content-aware diffusion},
+  author={Tu, Shuyuan and Dai, Qi and Cheng, Zhi-Qi and Hu, Han and Han, Xintong and Wu, Zuxuan and Jiang, Yu-Gang},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={7882--7891},
   year={2024}
 }
 ```
